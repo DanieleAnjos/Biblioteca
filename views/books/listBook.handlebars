@@ -1,0 +1,27 @@
+<h2>Lista de Livros</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>ISBN</th>
+            <th>Preço</th>
+            <th>Capa</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each books}}
+        <tr>
+            <td>{{this.title}}</td>
+            <td>{{this.author}}</td>
+            <td>{{this.isbn}}</td>
+            <td>{{this.price}}</td>
+            <td>
+                {{#if this.cover}}
+                <img src="/images/{{this.cover}}" alt="Capa do Livro" width="50">
+                {{/if}}
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
